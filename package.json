@@ -1,7 +1,7 @@
 {
   "name": "@bitr/awaitable-event-emitter",
-  "version": "1.0.0",
-  "description": "An enhanced event emitter with awaitable emit method.",
+  "version": "1.0.1",
+  "description": "An enhanced event emitter with awaitable emit methods.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
