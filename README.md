@@ -48,9 +48,11 @@ async emitParallel(event: string | symbol, ...args: any[]): Promise<void> {
 
 ```typescript
 async emitSerial(event: string | symbol, ...args: any[]): Promise<void> {
+  ...
   for (const listener of listeners) {
     await listener.fn(...args);
   }
+  ...
 } 
 ```
 
