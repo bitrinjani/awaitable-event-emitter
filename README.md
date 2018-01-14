@@ -11,7 +11,7 @@ npm install @bitr/awaitable-event-emitter
 
 # Why do you need this library?
 
-In the native EventEmitter, it is not easy to know when `emit` has finished executing the registered listeners because `emit` returns immediately without waiting for promises. In this enhanced version, you can await `emitParallel`/`emitSerial` that returns Promise.
+In the native EventEmitter, it is not easy to know when `emit` has finished executing async listeners because `emit` returns immediately without waiting for promises. In this enhanced version, you can await `emitParallel`/`emitSerial` that returns Promise.
 
 ```typescript
 class Awaitable extends AwaitableEventEmitter {
