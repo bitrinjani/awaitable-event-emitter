@@ -1,16 +1,23 @@
 {
   "name": "@bitr/awaitable-event-emitter",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "An enhanced event emitter with awaitable emit methods.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
+    "prebuild": "rimraf dist",
     "build": "tsc",
+    "prepublishOnly": "npm run build",
     "test": "jest --coverage --runInBand && cat ./coverage/lcov.info | coveralls",
     "jest": "jest --runInBand",
     "cov": "jest --coverage --runInBand"
   },
-  "keywords": ["await", "typescript", "event", "emitter"],
+  "keywords": [
+    "await",
+    "typescript",
+    "event",
+    "emitter"
+  ],
   "repository": "https://github.com/bitrinjani/awaitable-event-emitter",
   "author": "bitrinjani <bitrinjani@gmail.com>",
   "license": "MIT",
@@ -24,6 +31,7 @@
     "coveralls": "^3.0.0",
     "jest": "^21.0.3",
     "ts-jest": "^21.0.0",
+    "tslint-config-airbnb": "^5.5.0",
     "typescript": "^2.5.3"
   },
   "jest": {
@@ -31,8 +39,20 @@
       "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
     "testRegex": "/__tests__/.*\\.(jsx?|tsx?)$",
-    "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json"],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json"
+    ],
     "mapCoverage": true,
-    "collectCoverageFrom": ["**/*.{ts,tsx}", "!**/__tests__/**", "!**/node_modules/**", "!**/*.d.ts", "!**/types.ts"]
+    "collectCoverageFrom": [
+      "**/*.{ts,tsx}",
+      "!**/__tests__/**",
+      "!**/node_modules/**",
+      "!**/*.d.ts",
+      "!**/types.ts"
+    ]
   }
 }
