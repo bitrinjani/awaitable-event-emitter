@@ -14,6 +14,8 @@ npm install @bitr/awaitable-event-emitter
 In the native EventEmitter, it is not easy to know when `emit` has finished executing async listeners because `emit` returns immediately without waiting for promises. In this enhanced version, you can await `emitParallel`/`emitSerial` that returns Promise.
 
 ```typescript
+import { AwaitableEventEmitter } from '@bitr/awaitable-event-emitter';
+
 class Awaitable extends AwaitableEventEmitter {
   ...
 }
@@ -36,6 +38,7 @@ await awaitable.emitSerial('event');
 `emitParallel` is implemented with Promise.all. 
 
 ```typescript
+
 async emitParallel(event: string | symbol, ...args: any[]): Promise<void> {
   ...
   const tasks = listeners.map(l => l.fn(...args))
